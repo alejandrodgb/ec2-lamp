@@ -1,0 +1,7 @@
+---
+- hosts: 13.210.98.26
+  become: yes
+  roles:
+    - jenkins
+    - php
+    - phpunit

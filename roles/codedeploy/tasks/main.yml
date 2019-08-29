@@ -1,0 +1,16 @@
+---
+# tasks file for codedeploy
+- name: Download the installer package
+  get_url:
+    url: https://aws-codedeploy-ap-southeast-2.s3.ap-southeast-2.amazonaws.com/latest/install
+    dest: ~/codedeploy-agent-install
+    mode: 0755
+
+- name: Install codedeploy agent
+  command: ~/codedeploy-agent-install auto
+
+- name: Start the service and ensure it is running on system root
+  service: 
+    name: codedeploy-agent
+    state: started 
+    enabled: yes

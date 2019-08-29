@@ -1,0 +1,5 @@
+- hosts: 3.106.121.21
+  become: yes
+  roles:
+    - php
+    - codedeploy
